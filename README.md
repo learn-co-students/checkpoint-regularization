@@ -1,12 +1,10 @@
 
----
-## Extensions to Linear Regression [Suggested Time: 25 min]
----
+# Regularization
 
-In this section, you're going to be creating linear models that are more complicated than a simple linear regression. In the cells below, we are importing relevant modules that you might need later on. We also load and prepare the dataset for you.
+In this challenge, you're going to be creating linear models that are more complicated than a simple linear regression. In the cells below, we are importing relevant modules that you might need later on. We also load and prepare the dataset for you.
 
 
-```
+```python
 import pandas as pd
 import itertools
 import seaborn as sns
@@ -21,19 +19,19 @@ from sklearn.preprocessing import PolynomialFeatures
 ```
 
 
-```
+```python
 data = pd.read_csv('raw_data/advertising.csv').drop('Unnamed: 0',axis=1)
 data.describe()
 ```
 
 
-```
+```python
 X = data.drop('sales', axis=1)
 y = data['sales']
 ```
 
 
-```
+```python
 # split the data into training and testing set. Do not change the random state please!
 X_train , X_test, y_train, y_test = train_test_split(X, y,random_state=2019)
 ```
@@ -48,10 +46,10 @@ This function should:
 
 
 
-```
+```python
 def polynomial_regression(degree):
     """
-    Calculate train and test errorfor a linear regression with polynomial features.
+    Calculate train and test error for a linear regression with polynomial features.
     (Hint: use PolynomialFeatures)
     
     input: Polynomial degree
@@ -67,7 +65,7 @@ def polynomial_regression(degree):
 #### Try out your new function
 
 
-```
+```python
 polynomial_regression(3)
 ```
 
@@ -102,27 +100,27 @@ fig.savefig("visuals/rsme_poly.png",
 --->
 
 
-```
+```python
 # Your answer here
 ```
 
 ### 3. In general what methods would you can use to reduce overfitting and underfitting? Provide an example for both and explain how each technique works to reduce the problems of underfitting and overfitting.
 
 
-```
+```python
 # Your answer here
 ```
 
 ### 4. What is the difference between the two types of regularization for linear regression?
 
 
-```
+```python
 # Your answer here
 ```
 
 ### 5. Why is scaling input variables a necessary step before regularization?
 
 
-```
+```python
 # Your answer here
 ```
