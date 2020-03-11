@@ -1,7 +1,8 @@
-
 # Regularization
 
-In this challenge, you're going to be creating linear models that are more complicated than a simple linear regression. In the cells below, we are importing relevant modules that you might need later on. We also load and prepare the dataset for you.
+Today you'll be creating several different linear regression models in a predictive machine learning context.
+
+In the cells below, we are importing relevant modules that you might need later on. We also load and prepare the dataset for you.
 
 
 ```python
