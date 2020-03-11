@@ -1,10 +1,12 @@
-
 # Regularization
 
-In this challenge, you're going to be creating linear models that are more complicated than a simple linear regression. In the cells below, we are importing relevant modules that you might need later on. We also load and prepare the dataset for you.
+Today you'll be creating several different linear regression models in a predictive machine learning context.
+
+In the cells below, we are importing relevant modules that you might need later on. We also load and prepare the dataset for you.
 
 
 ```python
+# Run this cell without changes
 import pandas as pd
 import itertools
 import seaborn as sns
@@ -36,6 +38,7 @@ from sklearn.preprocessing import PolynomialFeatures
 
 
 ```python
+# Run this cell without changes
 data = pd.read_csv('raw_data/advertising.csv').drop('Unnamed: 0',axis=1)
 data.describe()
 ```
@@ -139,6 +142,7 @@ data.describe()
 
 
 ```python
+# Run this cell without changes
 X = data.drop('sales', axis=1)
 y = data['sales']
 ```
@@ -152,7 +156,8 @@ y = data['sales']
 
 
 ```python
-# split the data into training and testing set. Do not change the random state please!
+# Run this cell without changes
+# splits the data into training and testing set. Do not change the random state please!
 X_train , X_test, y_train, y_test = train_test_split(X, y,random_state=2019)
 ```
 
@@ -182,8 +187,9 @@ def polynomial_regression(degree):
     input: Polynomial degree
     output: Mean squared error for train and test set
     """
-    # // your code here //
+    # Your code here
     
+    # Replace None with appropriate code
     train_error = None
     test_error = None
     return train_error, test_error
@@ -216,6 +222,7 @@ def polynomial_regression(degree):
 
 
 ```python
+# Run this cell without changes
 polynomial_regression(3)
 ```
 
@@ -264,7 +271,7 @@ fig.savefig("visuals/rsme_poly.png",
 
 
 ```python
-# Your answer here
+# Your written answer here
 ```
 
 
@@ -281,7 +288,7 @@ fig.savefig("visuals/rsme_poly.png",
 
 
 ```python
-# Your answer here
+# Your written answer here
 ```
 
 
@@ -298,7 +305,7 @@ fig.savefig("visuals/rsme_poly.png",
 
 
 ```python
-# Your answer here
+# Your written answer here
 ```
 
 
@@ -313,7 +320,7 @@ fig.savefig("visuals/rsme_poly.png",
 
 
 ```python
-# Your answer here
+# Your written answer here
 ```
 
 
