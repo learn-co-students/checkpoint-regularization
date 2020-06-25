@@ -79,56 +79,56 @@ data.describe()
   </thead>
   <tbody>
     <tr>
-      <td>count</td>
+      <th>count</th>
       <td>200.000000</td>
       <td>200.000000</td>
       <td>200.000000</td>
       <td>200.000000</td>
     </tr>
     <tr>
-      <td>mean</td>
+      <th>mean</th>
       <td>147.042500</td>
       <td>23.264000</td>
       <td>30.554000</td>
       <td>14.022500</td>
     </tr>
     <tr>
-      <td>std</td>
+      <th>std</th>
       <td>85.854236</td>
       <td>14.846809</td>
       <td>21.778621</td>
       <td>5.217457</td>
     </tr>
     <tr>
-      <td>min</td>
+      <th>min</th>
       <td>0.700000</td>
       <td>0.000000</td>
       <td>0.300000</td>
       <td>1.600000</td>
     </tr>
     <tr>
-      <td>25%</td>
+      <th>25%</th>
       <td>74.375000</td>
       <td>9.975000</td>
       <td>12.750000</td>
       <td>10.375000</td>
     </tr>
     <tr>
-      <td>50%</td>
+      <th>50%</th>
       <td>149.750000</td>
       <td>22.900000</td>
       <td>25.750000</td>
       <td>12.900000</td>
     </tr>
     <tr>
-      <td>75%</td>
+      <th>75%</th>
       <td>218.825000</td>
       <td>36.525000</td>
       <td>45.100000</td>
       <td>17.400000</td>
     </tr>
     <tr>
-      <td>max</td>
+      <th>max</th>
       <td>296.400000</td>
       <td>49.600000</td>
       <td>114.000000</td>
@@ -235,19 +235,38 @@ polynomial_regression(3)
 
 
 
-    (0.24235967358392063, 0.15281375976869446)
+    (0.24235967358392094, 0.15281375975888198)
+
+
+
+
+```python
+# Run this cell without changes
+polynomial_regression(4)
+```
+
+
+```python
+# __SOLUTION__ 
+polynomial_regression(4)
+```
+
+
+
+
+    (0.18179109323300002, 1.9522597156044699)
 
 
 
 #### Check your answers
 
-MSE for degree 3:
-- Train: 0.2423596735839209
-- Test: 0.15281375973923944
+Approximate MSE for degree 3:
+- Train: 0.242
+- Test: 0.153
 
-MSE for degree 4:
-- Train: 0.18179109317368244
-- Test: 1.9522597174462015
+Approximate MSE for degree 4:
+- Train: 0.182
+- Test: 1.95
 
 ### 2. What is the optimal number of degrees for our polynomial features in this model? In general, how does increasing the polynomial degree relate to the Bias/Variance tradeoff?  (Note that this graph shows RMSE and not MSE.)
 
