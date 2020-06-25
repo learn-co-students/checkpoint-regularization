@@ -76,15 +76,21 @@ def polynomial_regression(degree):
 polynomial_regression(3)
 ```
 
+
+```python
+# Run this cell without changes
+polynomial_regression(4)
+```
+
 #### Check your answers
 
-MSE for degree 3:
-- Train: 0.2423596735839209
-- Test: 0.15281375973923944
+Approximate MSE for degree 3:
+- Train: 0.242
+- Test: 0.153
 
-MSE for degree 4:
-- Train: 0.18179109317368244
-- Test: 1.9522597174462015
+Approximate MSE for degree 4:
+- Train: 0.182
+- Test: 1.95
 
 ### 2. What is the optimal number of degrees for our polynomial features in this model? In general, how does increasing the polynomial degree relate to the Bias/Variance tradeoff?  (Note that this graph shows RMSE and not MSE.)
 
