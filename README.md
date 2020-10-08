@@ -41,6 +41,40 @@ y = data['sales']
 X_train , X_test, y_train, y_test = train_test_split(X, y,random_state=2019)
 ```
 
+
+```python
+### BEGIN SOLUTION
+
+
+from test_scripts.test_class import Test
+test = Test()
+
+# split the data into training and testing set. Do not change the random state please!
+X_train , X_test, y_train, y_test = train_test_split(X, y,random_state=2019)
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
+```
+
 ### 1. We'd like to add a bit of complexity to the model created in the example above, and we will do it by adding some polynomial terms. Write a function to calculate train and test error for different polynomial degrees.
 
 This function should:
@@ -52,6 +86,14 @@ This function should:
 
 
 ```python
+### BEGIN SOLUTION
+
+
+from test_scripts.test_class import Test
+test = Test()
+
+
+# do a polynomial regression
 def polynomial_regression(degree):
     """
     Calculate train and test error for a linear regression with polynomial features.
@@ -60,12 +102,36 @@ def polynomial_regression(degree):
     input: Polynomial degree
     output: Mean squared error for train and test set
     """
-    # Your code here
-    
-    # Replace None with appropriate code
-    train_error = None
-    test_error = None
+    poly = PolynomialFeatures(degree=degree,interaction_only=False)
+    X_poly_train = poly.fit_transform(X_train)
+    X_poly_test = poly.transform(X_test)
+    lr_poly = LinearRegression()
+    lr_poly.fit(X_poly_train,y_train)
+    train_error = mean_squared_error(y_train, lr_poly.predict(X_poly_train))
+    test_error = mean_squared_error(y_test, lr_poly.predict(X_poly_test))
     return train_error, test_error
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 #### Try out your new function
@@ -114,26 +180,150 @@ fig.savefig("visuals/rsme_poly.png",
 
 
 ```python
-# Your written answer here
+### BEGIN SOLUTION
+
+
+from test_scripts.test_class import Test
+test = Test()
+
+# The optimal number of features in this example is 3 because the testing error 
+# is minimized at this point, and it increases dramatically with a higher degree polynomial. 
+# As we increase the polynomial features, it is going to cause our training error to decrease, 
+# which decreases the bias but increases the variance (the testing error increases). 
+# In other words, the more complex the model, the higher the chance of overfitting.
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 ### 3. In general what methods would you can use to reduce overfitting and underfitting? Provide an example for both and explain how each technique works to reduce the problems of underfitting and overfitting.
 
 
 ```python
-# Your written answer here
+### BEGIN SOLUTION
+
+
+from test_scripts.test_class import Test
+test = Test()
+
+# Overfitting: Regularization. With regularization, more complex models are penalized. 
+# This ensures that the models are not trained to too much "noise."
+
+# Underfitting: Feature engineering. By adding additional features, you enable your 
+# machine learning models to gain insights about your data.
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 ### 4. What is the difference between the two types of regularization for linear regression?
 
 
 ```python
-# Your written answer here
+### BEGIN SOLUTION
+
+
+from test_scripts.test_class import Test
+test = Test()
+
+# L1 or Lasso Regression adds a term to the cost function which reduces some smaller weights down to zero.
+# L2 or Ridge Regression adds a term to the cost function which penalizes weights based on their size,
+# bringing all of them closer to zero.
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
 
 ### 5. Why is scaling input variables a necessary step before regularization?
 
 
 ```python
-# Your written answer here
+### BEGIN SOLUTION
+
+
+from test_scripts.test_class import Test
+test = Test()
+
+# Regularization adjusts feature weights depending on their magnitude.
+# Feature weights themselves depend on both the feature importance and the magnitude of the input variable.
+# Therefore, it's important to control for the magnitude of the input variable by scaling all features the same.
+
+test.save()
+
+
+
+### END SOLUTION
+```
+
+
+```python
+# PUT ALL WORK FOR THE ABOVE QUESTION ABOVE THIS CELL
+# THIS UNALTERABLE CELL CONTAINS HIDDEN TESTS
+
+### BEGIN HIDDEN TESTS
+
+from test_scripts.test_class import Test
+test = Test()
+
+test.run_test()
+
+
+### END HIDDEN TESTS
 ```
